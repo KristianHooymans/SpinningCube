@@ -17,8 +17,9 @@ double cY(int x, int y, int z) {
 }
 
 double cZ(int x, int y, int z) {
-  
+  return z * std::cos(A) * std::cos(B) - y * std::sin(A) * std::cos(B) + x * std::sin(B);  
 }
+
 
 int main() {
 

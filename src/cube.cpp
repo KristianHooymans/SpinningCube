@@ -14,15 +14,15 @@ const int height = 40;
 char video[width * height];
 double zbuffer[width * height];
 
-double cX(int x, int y, int z) {
+double cX(double x, double y, double z) {
   return y * std::sin(A) * std::sin(B) * std::cos(C) - z * std::cos(A) * std::sin(B) * std::cos(C) + y * std::cos(A) * std::sin(C) + z * std::sin(A) * std::sin(C) + x * std::cos(B)* std::cos(C);
 } 
 
-double cY(int x, int y, int z) {
+double cY(double x, double y, double z) {
   return y * std::cos(A) * std::cos(C) + z * std::sin(A) * std::cos(C) - y * std::sin(A) * std::sin(B) * std::sin(C) + z * std::cos(A) *std::sin(B) * std::sin(C) - x * std::cos(B) * std::sin(C);
 }
 
-double cZ(int x, int y, int z) {
+double cZ(double x, double y, double z) {
   return z * std::cos(A) * std::cos(B) - y * std::sin(A) * std::cos(B) + x * std::sin(B);  
 }
 
@@ -39,10 +39,6 @@ void plot(double fx, double fy, double fz, char ch) {
 }
 
 int main() {
-  double x, y, z;
-  x = 10;
-  y = 10;
-  z = 10;
   while(true){  
     std::cout << "\033[2J"; //clears terminal screen 
 

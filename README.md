@@ -2,10 +2,6 @@
 
 A rotating 3D cube rendered as ASCII characters directly in the terminal, written from scratch in C++ — no graphics libraries, no external dependencies. Just rotation matrices, perspective projection, and ANSI escape codes.
 
-## Demo
-
-_Add a short screen recording (`demo.gif`) here — a spinning terminal render is the kind of thing that sells itself in motion._
-
 ## How it works
 
 The whole pipeline is a few dozen lines of maths and one framebuffer:

@@ -57,7 +57,7 @@ int main() {
         plot(cubeWidth, cy, cx, '?');
         plot(-cubeWidth, cy, cx, '$');
         plot(cx, cubeWidth, cy, '!');
-        plot(cx, cubeWidth, cy, '@');
+        plot(cx, -cubeWidth, cy, '@');
       }
     }
   

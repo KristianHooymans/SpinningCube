@@ -31,11 +31,11 @@ double cZ(double x, double y, double z) // calculates the Z rotational coordinat
 
 void plot(double fx, double fy, double fz, char ch) //plots the 3D image on the 2D display
 {
-  Vector3D p = {cX(fx, fy, fz), cY(fx, fy, fz), cZ(fx, fy, fz) };
-  double depth = p.z + distFromCam;
-  int screenX = width/2 + K1 * p.x / depth * 2;
+  Vector3D p = {cX(fx, fy, fz), cY(fx, fy, fz), cZ(fx, fy, fz) }; //point to plot
+  double depth = p.z + distFromCam; 
+  int screenX = width/2 + K1 * p.x / depth * 2; 
   int screenY = height/2 + K1 * p.y / depth;
-  int index = screenY * width + screenX; //flatten from 3D to 2D
+  int index = screenY * width + screenX; 
   if (index >= 0 && index < width * height) {
     video[index] = ch;
   }
@@ -51,7 +51,7 @@ int main() {
     }
   
     for (double cx = -cubeWidth; cx < cubeWidth; cx += 0.15) {
-      for (double cy = -cubeWidth; cy < cubeWidth; cy += 0.15) {
+      for (double cy = -cubeWidth; cy < cubeWidth; cy += 0.15) { //calculate all points for all 6 faces
         plot(cx, cy, cubeWidth, '#');
         plot(cx, cy, -cubeWidth, '!');
         plot(cubeWidth, cy, cx, '~');
@@ -64,11 +64,11 @@ int main() {
     for (int row = 0; row < height; ++row) {
       for (int col = 0; col < width; ++col) {
         
-        std::cout << video[row * width + col];
+        std::cout << video[row * width + col]; // prints cube
       }
       std::cout << '\n';
     }
-    A+= 0.05; B += 0.05; C += 0.05;
+    A+= 0.05; B += 0.05; C += 0.05; //change angle
     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // small delay so it isn't too fast
   }
   

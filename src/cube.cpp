@@ -51,7 +51,7 @@ int main() {
     }
   
     for (double cx = -cubeWidth; cx < cubeWidth; cx += 0.15) {
-      for (double cy = -cubeWidth; cy < cubeWidth; cy += 0.15) { //calculate all points for all 6 faces
+      for (double cy = -cubeWidth; cy < cubeWidth; cy += 0.15) { //calculate points for all 6 faces
         plot(cx, cy, cubeWidth, '#');
         plot(cx, cy, -cubeWidth, '!');
         plot(cubeWidth, cy, cx, '~');
@@ -69,7 +69,7 @@ int main() {
       std::cout << '\n';
     }
     A+= 0.05; B += 0.05; C += 0.05; //change angle
-    std::this_thread::sleep_for(std::chrono::milliseconds(10)); // small delay so it isn't too fast
+    std::this_thread::sleep_for(std::chrono::milliseconds(5)); // small delay so it isn't too fast
   }
   
 
